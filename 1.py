@@ -4,11 +4,10 @@
 
 print ("What's the frequency, Kenneth?")
 
-# Read frequency changes from file into a changelist
+# Read frequency changes from file into a changelist, as integers
 changelist = []
-with open('frequency-changes.txt') as file_:
-    for line in file_:
-        changelist.append(int(line))
+with open('frequency-changes.txt') as f:
+    changelist = list(map(int, f.readlines()))
 
 # Loop through changelist over and over, until reaching a previously seen frequency
 current = 0
