@@ -8,15 +8,15 @@ print ("What's the frequency, Kenneth?")
 changelist = []
 with open('frequency-changes.txt') as file_:
     for line in file_:
-        changelist.append(line)
+        changelist.append(int(line))
 
 # Loop through changelist over and over, until reaching a previously seen frequency
 current = 0
 seen = {}
 found = False
 while not found:
-    for i in range(len(changelist)):
-        current += int(changelist[i])
+    for change in changelist:
+        current += change
         if current in seen.keys():
             found = True
             break
