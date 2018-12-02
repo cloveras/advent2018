@@ -3,8 +3,8 @@
 # https://adventofcode.com/2018
 
 # Read frequency changes from file into a changelist, as integers
-def get_changelist():
-    with open('frequency-changes.txt') as f:
+def get_changelist(filename):
+    with open(filename) as f:
         changelist = list(map(int, f.readlines()))
     return changelist
 
@@ -25,4 +25,5 @@ def find_seen_frequency(changelist):
 
 # Run the 💎💎
 print ("What's the frequency, Kenneth?")
-print("It's", find_seen_frequency(get_changelist()))
+frequency = find_seen_frequency(get_changelist('frequency-changes.txt'))
+print("It's", frequency)
