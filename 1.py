@@ -16,7 +16,7 @@ found = False
 while not found:
     for change in changelist:
         current += change
-        if current in seen.keys():
+        if current in seen:
             found = True
             break
         else:
