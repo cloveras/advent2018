@@ -10,7 +10,6 @@ with open('frequency-changes.txt') as file_:
     for line in file_:
         changelist.append(line)
 
-
 # Loop through changelist over and over, until reaching a previously seen frequency
 current = 0
 seen = {}
@@ -24,4 +23,5 @@ while not found:
         else:
             seen[current] = True
 
+# We have a winner!
 print("It's", current)
