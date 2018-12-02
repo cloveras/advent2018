@@ -3,7 +3,7 @@
 use strict;
 use File::Slurp;
 
-my @changes = read_file("frequency-changes.txt", chomp => 1);
+my @changes = read_file("frequency-changes.txt");
 my $frequency = 0;
 my %seen = ();
 my $found = 0;
