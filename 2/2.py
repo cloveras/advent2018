@@ -2,18 +2,15 @@
 #
 # https://adventofcode.com/2018
 
-import string
-
 # Read ids from file into list
 def get_ids(filename):
     with open(filename) as f:
         ids = f.readlines()
     return ids
 
-# Count how many letters occur at least "count" times in the id.
+# Check if id has at least one letter that occurs exactly "count" times
 def count_letters_in_id(id, count):
-    alphabet = string.ascii_lowercase
-    for letter in alphabet:
+    for letter in list("abcdefghijklmnopqrstuvxyz"):
         if id.count(letter) == count:
             return 1
     return 0
@@ -25,6 +22,7 @@ three = 0
 for id in ids:
     two += count_letters_in_id(id, 2)
     three += count_letters_in_id(id, 3)
+
 print("two:", two)
 print("three:", three)
 print("checksum:", two * three)
