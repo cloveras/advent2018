@@ -17,20 +17,18 @@ def count_letters_in_id(id, count):
     for letter in alphabet:
         if id.count(letter) == count:
             occurences += 1
-    if occurences == 1:
-        print("\tMATCH: letter:", letter, ": count:", count, "occurences:", occurences)
+    if occurences >= 1:
         return 1
     else:
-        print("\tNope: letter:", letter, ": count:", count, "occurences:", occurences)
         return 0
 
+# Business time
 ids = get_ids("input.txt")
 two = 0
 three = 0
 for id in ids:
-    print("id:", id)
     two += count_letters_in_id(id, 2)
     three += count_letters_in_id(id, 3)
 print("two:", two)
 print("three:", three)
-print(two * three)
+print("checksum:", two * three)
